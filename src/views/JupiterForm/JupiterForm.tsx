@@ -1,18 +1,30 @@
-import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
-import { PublicKey } from "@solana/web3.js";
-import { TokenInfo } from "@solana/spl-token-registry";
-import { useConnection, useWallet } from "@solana/wallet-adapter-react";
+import React, {
+  FunctionComponent,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 
-import { TOKEN_LIST_URL, useJupiter } from "@jup-ag/react-hook";
+import fetch from 'cross-fetch';
+
 import {
-  CHAIN_ID,
+  TOKEN_LIST_URL,
+  useJupiter,
+} from '@jup-ag/react-hook';
+import { TokenInfo } from '@solana/spl-token-registry';
+import {
+  useConnection,
+  useWallet,
+} from '@solana/wallet-adapter-react';
+import { PublicKey } from '@solana/web3.js';
+
+import {
   INPUT_MINT_ADDRESS,
   OUTPUT_MINT_ADDRESS,
-} from "../../constants";
-
-import FeeInfo from "./FeeInfo";
-import SpinnerProgress from "./SpinnerProgress";
-import fetch from "cross-fetch";
+} from '../../constants';
+import FeeInfo from './FeeInfo';
+import JupiterComponent from './JupiterComponent';
+import SpinnerProgress from './SpinnerProgress';
 
 interface IJupiterFormProps {}
 type UseJupiterProps = Parameters<typeof useJupiter>[0];
@@ -275,6 +287,7 @@ const JupiterForm: FunctionComponent<IJupiterFormProps> = (props) => {
           Swap Best Route
         </button>
       </div>
+      <JupiterComponent />
     </div>
   );
 };
