@@ -6,6 +6,7 @@ import React, {
 } from 'react';
 
 import fetch from 'cross-fetch';
+import { useHavana } from 'havana-react-hooks';
 
 import {
   TOKEN_LIST_URL,
@@ -76,7 +77,7 @@ const JupiterForm: FunctionComponent<IJupiterFormProps> = (props) => {
     error,
     refresh,
     lastRefreshTimestamp,
-  } = useJupiter({
+  } = useHavana({
     ...formValue,
     amount: amountInDecimal,
   });
@@ -287,7 +288,7 @@ const JupiterForm: FunctionComponent<IJupiterFormProps> = (props) => {
           Swap Best Route
         </button>
       </div>
-      <JupiterComponent />
+      <JupiterComponent inputMint='So11111111111111111111111111111111111111112' outputMint='EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v' amount='1000' slippage='0.1' />
     </div>
   );
 };
