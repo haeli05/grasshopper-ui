@@ -121,6 +121,21 @@ interface IJupiterFormProps {
       }, 1000);
       return () => clearInterval(intervalId);
     }, [loading]);
+
+    useEffect(() => {
+        const inputpbKey = new PublicKey(props.inputMint);
+        const outputpbKey = new PublicKey(props.outputMint);
+        if (inputpbKey && outputpbKey && props.amount && props.slippage) {
+          setFormValue((val) => ({
+            ...val,
+            inputMint: inputpbKey,
+            outputMint: outputpbKey,
+            amount: props.amount,
+            slippage: props.slippage
+          }));
+        }
+
+    },[props]);
   
     return (
       <div className="max-w-full md:max-w-lg">

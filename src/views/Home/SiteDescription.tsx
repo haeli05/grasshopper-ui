@@ -1,6 +1,8 @@
-import React from 'react'
+import React from 'react';
+
 import { useWallet } from '@solana/wallet-adapter-react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
+
 import { ENV } from '../../constants';
 
 const SolanaLogo = () => (
@@ -65,14 +67,12 @@ const SiteDescription = () => {
                 <div className="text-center hero-content">
                     <div>
                         <h1 className="mb-5 text-5xl font-bold">
-                            Hello Solana <SolanaLogo /> World!
+                            Havana <SolanaLogo /> Router
                         </h1>
 
                         <div className="max-w-md">
                             <p className="mb-5">
-                                This scaffold includes awesome tools for rapid development and
-                                deploy dapps to Solana: Next.JS, TypeScript, TailwindCSS,
-                                Daisy UI.
+                                Save up to 50 bps (basispoints) on your trades
                             </p>
                             <p className="mb-5">Solana wallet adapter is connected and ready to use.</p>
                             <p className="mb-5">Environment: {ENV}</p>
