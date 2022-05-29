@@ -8,10 +8,7 @@ import React, {
 import fetch from 'cross-fetch';
 import { useHavana } from 'havana-react-hooks';
 
-import {
-  TOKEN_LIST_URL,
-  useJupiter,
-} from '@jup-ag/react-hook';
+import { TOKEN_LIST_URL } from '@jup-ag/react-hook';
 import { TokenInfo } from '@solana/spl-token-registry';
 import {
   useConnection,
@@ -24,13 +21,14 @@ import {
   OUTPUT_MINT_ADDRESS,
 } from '../../constants';
 import FeeInfo from './FeeInfo';
-import JupiterComponent from './JupiterComponent';
+import JupiterBenchmark from './JupiterBenchmark';
 import SpinnerProgress from './SpinnerProgress';
 
 interface IJupiterFormProps {}
-type UseJupiterProps = Parameters<typeof useJupiter>[0];
+type UseJupiterProps = Parameters<typeof useHavana>[0];
 
 const SECOND_TO_REFRESH = 30;
+
 
 const JupiterForm: FunctionComponent<IJupiterFormProps> = (props) => {
   const wallet = useWallet();
@@ -288,7 +286,7 @@ const JupiterForm: FunctionComponent<IJupiterFormProps> = (props) => {
           Swap Best Route
         </button>
       </div>
-      <JupiterComponent inputMint='So11111111111111111111111111111111111111112' outputMint='EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v' amount='1000' slippage='0.1' />
+      <JupiterBenchmark  amount={formValue.amount} inputMint={formValue.inputMint} outputMint={formValue.outputMint} slippage={formValue.slippage} />
     </div>
   );
 };

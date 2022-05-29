@@ -7,6 +7,7 @@ import React, { useMemo } from 'react';
 import { HavanaProvider } from 'havana-react-hooks';
 import type { AppProps } from 'next/app';
 
+import { JupiterProvider } from '@jup-ag/react-hook';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import {
   ConnectionProvider,
@@ -42,7 +43,16 @@ const JupiterWrapper: React.FC = ({ children }) => {
       userPublicKey={wallet.publicKey || undefined}
       routeCacheDuration={0}
     >
+      <JupiterProvider
+      cluster="mainnet-beta"
+      connection={connection}
+      userPublicKey={wallet.publicKey || undefined}
+      routeCacheDuration={0}
+    >
+
+    
       {children}
+      </JupiterProvider>
     </HavanaProvider>
   );
 };
