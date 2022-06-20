@@ -1,6 +1,12 @@
-import React, { FunctionComponent, useEffect, useState } from "react";
+import React, {
+  FunctionComponent,
+  useState,
+} from 'react';
 
-import { RouteInfo, TransactionFeeInfo } from "@jup-ag/react-hook";
+import {
+  RouteInfo,
+  TransactionFeeInfo,
+} from '@jup-ag/react-hook';
 
 const FeeInfo: FunctionComponent<{ route: RouteInfo }> = ({
   route,
@@ -8,10 +14,10 @@ const FeeInfo: FunctionComponent<{ route: RouteInfo }> = ({
   route: RouteInfo;
 }) => {
   const [state, setState] = useState<TransactionFeeInfo>();
-  useEffect(() => {
-    setState(undefined);
-    route.getDepositAndFee().then(setState);
-  }, [route]);
+  // useEffect(() => {
+  //   setState(undefined);
+  //   route.getDepositAndFee().then(setState);
+  // }, [route]);
   return (
     <div>
       {state && (

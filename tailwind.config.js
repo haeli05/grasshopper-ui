@@ -7,8 +7,8 @@ module.exports = {
   darkMode: "media", // or 'false' or 'class'
   theme: {
     fontFamily: {
-      // sans: ['Graphik', 'sans-serif'],
-      // serif: ['Merriweather', 'serif'],
+       // sans: ['Graphik', 'sans-serif'],
+       // serif: ['Merriweather', 'serif'],
     },
     extend: {
       // spacing: {
