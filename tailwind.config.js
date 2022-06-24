@@ -7,8 +7,8 @@ module.exports = {
   darkMode: "media", // or 'false' or 'class'
   theme: {
     fontFamily: {
-       // sans: ['Graphik', 'sans-serif'],
-       // serif: ['Merriweather', 'serif'],
+       sans: ['Graphik', 'sans-serif'],
+       serif: ['Merriweather', 'serif'],
     },
     extend: {
       // spacing: {
@@ -28,9 +28,9 @@ module.exports = {
     styled: true,
     themes: [
       // first one will be the default theme
-      "dark",
+      // "dark",
       // uncomment to enable
-      // "light (default)",
+       "light (default)",
       // "dark",
       // "cupcake",
       // "bumblebee",
