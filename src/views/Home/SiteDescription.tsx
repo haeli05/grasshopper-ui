@@ -62,7 +62,7 @@ const SiteDescription = () => {
     const { publicKey } = useWallet();
 
     return (
-        <div className="w-full text-center pt-2">
+        <div className="w-full text-center text-black pt-2">
             <div className="hero">
                 <div className="text-center hero-content">
                     <div>
@@ -71,10 +71,13 @@ const SiteDescription = () => {
                         </h1>
 
                         <div className="max-w-md">
+                            <b>
+                                Next-Gen Dex Aggregator
+                            </b>
+                            <br />
                             <p className="mb-5">
-                                Save up to 50 bps (basispoints) on your trades
+                                Save up to 50 bps (0.5%) per trade
                             </p>
-                            <p className="mb-5">Solana wallet adapter is connected and ready to use.</p>
                             <p className="mb-5">Environment: {ENV}</p>
                             {publicKey
                                 ? (

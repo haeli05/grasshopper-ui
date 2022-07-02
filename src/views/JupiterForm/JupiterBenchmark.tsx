@@ -138,8 +138,14 @@ interface IJupiterFormProps {
     },[props]);
   
     return (
-      <div className="max-w-full md:max-w-lg">
-        Jupiter Benchmark -- Do not alter values here
+      <div className="p-10 m-14 max-w-full md:max-w-lg bg-neutral align-center rounded-md">
+        <b> Jupiter Benchmark</b>
+        <br></br>
+        <p>Your trade Benchmarked against Jup.ag's aggregator</p>
+        <br />
+
+        <p>!! Do not alter values here !!</p>
+        
         <div className="mb-2">
           <label htmlFor="inputMint" className="block text-sm font-medium">
             Input token
@@ -264,8 +270,8 @@ interface IJupiterFormProps {
           })()}
   
         {error && <div>Error in Jupiter, try changing your intpu</div>}
-  
-        <div className="flex justify-center mt-4">
+          {/* benchmark so trade is hidden */}
+        <div className="hidden flex justify-center mt-4">
           <button
             type="button"
             disabled={loading}
