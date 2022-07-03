@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import Swap from '../../pages/swap';
 import JupiterForm from '../JupiterForm/JupiterForm';
 import Header from './Header';
 import styles from './index.module.css';
@@ -13,6 +14,7 @@ const Home: FC = ({ }) => {
         <Header />
         <SiteDescription />
         <JupiterForm />
+        <Swap />
       </div>
     </div>
   );
